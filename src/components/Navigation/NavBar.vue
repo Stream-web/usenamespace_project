@@ -1,11 +1,26 @@
 <template>
   <div>
     <header
-      class="navigation-navbar-header-container"
-      :class="{
-        'fixed-header': fixed
-      }"
+      :class="[
+        ns.b(),
+        // 'fixed-header' : fixed
+        // ns.m(_type),
+        // ns.m(_size),
+        // ns.is('disabled', _disabled),
+        // ns.is('loading', loading),
+        // ns.is('plain', plain),
+        // ns.is('round', round),
+        // ns.is('circle', circle),
+        // ns.is('text', text),
+        // ns.is('link', link),
+        // ns.is('has-bg', bg)
+      ]"
     >
+      <!-- :class="[
+        'fixed-header': fixed
+          ns.b(),
+      ]}" -->
+      <!-- class="navigation-navbar-header-container" -->
       <div class="navbar-header-box">
         <slot></slot>
         <div style="flex: 1;"></div>
@@ -21,6 +36,7 @@
 import Translations from '@/locales/Translations.vue'
 import NavigationSideAction from '@/components/Navigation/Side/SideAction.vue'
 import NavigationAvatar from '@/components/Navigation/Avatar.vue'
+import '@/styles/NavBar.scss'
 
 export default defineComponent({
   name: 'NavigationNavBar',
@@ -33,6 +49,12 @@ export default defineComponent({
     fixed: {
       type: Boolean,
       default: true
+    }
+  },
+  setup () {
+    const ns = useNamespace('navigation')
+    return {
+      ns
     }
   }
 })

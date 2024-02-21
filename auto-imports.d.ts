@@ -17,6 +17,7 @@ declare global {
   const createWebHashHistory: typeof import('vue-router')['createWebHashHistory']
   const createWebHistory: typeof import('vue-router')['createWebHistory']
   const customRef: typeof import('vue')['customRef']
+  const defaultNamespace: typeof import('./src/hooks/useNamespace')['defaultNamespace']
   const defineAsyncComponent: typeof import('vue')['defineAsyncComponent']
   const defineComponent: typeof import('vue')['defineComponent']
   const effectScope: typeof import('vue')['effectScope']
@@ -34,6 +35,7 @@ declare global {
   const mapMutations: typeof import('vuex')['mapMutations']
   const mapState: typeof import('vuex')['mapState']
   const markRaw: typeof import('vue')['markRaw']
+  const namespaceContextKey: typeof import('./src/hooks/useNamespace')['namespaceContextKey']
   const nextTick: typeof import('vue')['nextTick']
   const onActivated: typeof import('vue')['onActivated']
   const onBeforeMount: typeof import('vue')['onBeforeMount']
@@ -70,8 +72,10 @@ declare global {
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVars: typeof import('vue')['useCssVars']
   const useCurrentInstance: typeof import('./src/hooks/useCurrentInstance')['default']
+  const useGetDerivedNamespace: typeof import('./src/hooks/useNamespace')['useGetDerivedNamespace']
   const useLanguage: typeof import('./src/hooks/useLanguage')['useLanguage']
   const useLink: typeof import('vue-router')['useLink']
+  const useNamespace: typeof import('./src/hooks/useNamespace')['useNamespace']
   const useRoute: typeof import('vue-router')['useRoute']
   const useRouter: typeof import('vue-router')['useRouter']
   const useSlots: typeof import('vue')['useSlots']
@@ -108,6 +112,7 @@ declare module 'vue' {
     readonly createWebHashHistory: UnwrapRef<typeof import('vue-router')['createWebHashHistory']>
     readonly createWebHistory: UnwrapRef<typeof import('vue-router')['createWebHistory']>
     readonly customRef: UnwrapRef<typeof import('vue')['customRef']>
+    readonly defaultNamespace: UnwrapRef<typeof import('./src/hooks/useNamespace')['defaultNamespace']>
     readonly defineAsyncComponent: UnwrapRef<typeof import('vue')['defineAsyncComponent']>
     readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
@@ -125,6 +130,7 @@ declare module 'vue' {
     readonly mapMutations: UnwrapRef<typeof import('vuex')['mapMutations']>
     readonly mapState: UnwrapRef<typeof import('vuex')['mapState']>
     readonly markRaw: UnwrapRef<typeof import('vue')['markRaw']>
+    readonly namespaceContextKey: UnwrapRef<typeof import('./src/hooks/useNamespace')['namespaceContextKey']>
     readonly nextTick: UnwrapRef<typeof import('vue')['nextTick']>
     readonly onActivated: UnwrapRef<typeof import('vue')['onActivated']>
     readonly onBeforeMount: UnwrapRef<typeof import('vue')['onBeforeMount']>
@@ -161,8 +167,10 @@ declare module 'vue' {
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
     readonly useCurrentInstance: UnwrapRef<typeof import('./src/hooks/useCurrentInstance')['default']>
+    readonly useGetDerivedNamespace: UnwrapRef<typeof import('./src/hooks/useNamespace')['useGetDerivedNamespace']>
     readonly useLanguage: UnwrapRef<typeof import('./src/hooks/useLanguage')['useLanguage']>
     readonly useLink: UnwrapRef<typeof import('vue-router')['useLink']>
+    readonly useNamespace: UnwrapRef<typeof import('./src/hooks/useNamespace')['useNamespace']>
     readonly useRoute: UnwrapRef<typeof import('vue-router')['useRoute']>
     readonly useRouter: UnwrapRef<typeof import('vue-router')['useRouter']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
@@ -189,6 +197,7 @@ declare module '@vue/runtime-core' {
     readonly createWebHashHistory: UnwrapRef<typeof import('vue-router')['createWebHashHistory']>
     readonly createWebHistory: UnwrapRef<typeof import('vue-router')['createWebHistory']>
     readonly customRef: UnwrapRef<typeof import('vue')['customRef']>
+    readonly defaultNamespace: UnwrapRef<typeof import('./src/hooks/useNamespace')['defaultNamespace']>
     readonly defineAsyncComponent: UnwrapRef<typeof import('vue')['defineAsyncComponent']>
     readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
@@ -206,6 +215,7 @@ declare module '@vue/runtime-core' {
     readonly mapMutations: UnwrapRef<typeof import('vuex')['mapMutations']>
     readonly mapState: UnwrapRef<typeof import('vuex')['mapState']>
     readonly markRaw: UnwrapRef<typeof import('vue')['markRaw']>
+    readonly namespaceContextKey: UnwrapRef<typeof import('./src/hooks/useNamespace')['namespaceContextKey']>
     readonly nextTick: UnwrapRef<typeof import('vue')['nextTick']>
     readonly onActivated: UnwrapRef<typeof import('vue')['onActivated']>
     readonly onBeforeMount: UnwrapRef<typeof import('vue')['onBeforeMount']>
@@ -242,8 +252,10 @@ declare module '@vue/runtime-core' {
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
     readonly useCurrentInstance: UnwrapRef<typeof import('./src/hooks/useCurrentInstance')['default']>
+    readonly useGetDerivedNamespace: UnwrapRef<typeof import('./src/hooks/useNamespace')['useGetDerivedNamespace']>
     readonly useLanguage: UnwrapRef<typeof import('./src/hooks/useLanguage')['useLanguage']>
     readonly useLink: UnwrapRef<typeof import('vue-router')['useLink']>
+    readonly useNamespace: UnwrapRef<typeof import('./src/hooks/useNamespace')['useNamespace']>
     readonly useRoute: UnwrapRef<typeof import('vue-router')['useRoute']>
     readonly useRouter: UnwrapRef<typeof import('vue-router')['useRouter']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
