@@ -5,11 +5,28 @@
 @use 'mixins/mixins' as *;
 @use 'mixins/utils' as *;
 @use 'mixins/var' as *;
+// $navigation-icon-span-gap: () !default;
+// $navigation-icon-span-gap: map.merge(
+//   (
+//     'large': 8px,
+//     'default': 6px,
+//     'small': 4px,
+//   ),
+//   $navigation-icon-span-gap
+// );
+
+// @include b(navigation) {
+//   @include set-component-css-var('navigation', $navigation);
+// }
 @include b(navigation) {
-    color: red;
-    @include when() {
-        background-color: red;
-    }
-    @include when() {
+    // color: red;
+    // @include when() {
+    // }
+    @include when(disabled) {
+        color: red;
+        // color: getCssVar('button', 'disabled', 'text-color');
+        // background-color: transparent !important;
+        // border-color: transparent !important;
     }
 }
+

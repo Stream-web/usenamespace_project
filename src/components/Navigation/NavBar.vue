@@ -3,6 +3,7 @@
     <header
       :class="[
         ns.b(),
+        ns.is('disabled', true),
         // 'fixed-header' : fixed
         // ns.m(_type),
         // ns.m(_size),
@@ -21,43 +22,52 @@
           ns.b(),
       ]}" -->
       <!-- class="navigation-navbar-header-container" -->
-      <div class="navbar-header-box">
-        <slot></slot>
-        <div style="flex: 1;"></div>
-        <NavigationSideAction />
+      <div
+        :class="ns.is('disabled')"
+      >
+        <!-- class="navbar-header-box" -->
+        <!-- <slot></slot> -->
+        <div
+          style="flex: 1;"
+          :class="ns.is('disabled')"
+        >
+          1213232
+        </div>
+        <!-- <NavigationSideAction />
         <NavigationAvatar />
-        <Translations dark />
+        <Translations dark /> -->
       </div>
     </header>
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import Translations from '@/locales/Translations.vue'
 import NavigationSideAction from '@/components/Navigation/Side/SideAction.vue'
 import NavigationAvatar from '@/components/Navigation/Avatar.vue'
 import '@/styles/NavBar.scss'
-
-export default defineComponent({
-  name: 'NavigationNavBar',
-  components: {
-    Translations,
-    NavigationSideAction,
-    NavigationAvatar
-  },
-  props: {
-    fixed: {
-      type: Boolean,
-      default: true
-    }
-  },
-  setup () {
-    const ns = useNamespace('navigation')
-    return {
-      ns
-    }
-  }
-})
+const ns = useNamespace('navigation')
+const disabled = ref(false)
+// export default defineComponent({
+//   name: 'NavigationNavBar',
+//   components: {
+//     Translations,
+//     NavigationSideAction,
+//     NavigationAvatar
+//   },
+//   props: {
+//     fixed: {
+//       type: Boolean,
+//       default: true
+//     }
+//   },
+//   setup () {
+//     const ns = useNamespace('navigation')
+//     return {
+//       ns
+//     }
+//   }
+// })
 </script>
 <style lang="scss" scoped>
 $headerHeight: 48px;
